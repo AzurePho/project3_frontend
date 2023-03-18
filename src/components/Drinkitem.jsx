@@ -48,3 +48,5 @@ const Drinkitem = () => {
 
 
 }
+
+export default Drinkitem;

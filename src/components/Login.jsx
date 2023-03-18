@@ -6,10 +6,12 @@ const Login = () => {
     const navigate = useNavigate();
     const [error, setError] = useState("");
 
-    const onSubmit = async (formData) => {
-        try {
+//     const onSubmit = async (formData) => {
+//         try {
             
-        }
-}
+//         }
+// }
 
 }
+
+export default Login;
