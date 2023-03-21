@@ -3,12 +3,14 @@ import axios from "axios";
 import {API_URL} from "../consts";
 import { Link , useParams} from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+
 import "../Index.css";
 // import "./Drink.css"
 
 const Drinkitem = () => {
     const navigate = useNavigate();
     const [drink , setDrink]= useState([]);
+    const [error , setError]= useState("");
 
     const {id} = useParams();
 
@@ -52,6 +54,7 @@ const deleteDrink = async (id) => {
         navigate("/drinks");
     }catch(err){
         console.log(err);
+        setError(err.response.data.message);
     }
 };
 
@@ -61,8 +64,14 @@ const deleteDrink = async (id) => {
        
 
 <div className="page" >
+{error && (<h4 className="alert-failure">
+                                {error}
+                            </h4>)}
     <div className="containerAlbum" >
+
     <h1>drink item</h1>
+
+    
             <ul>
 
             <li key={id}>
