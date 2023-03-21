@@ -1,13 +1,10 @@
+import "../Index.css";
+
+
 const Homepage = () => {
-    // const navigate = useNavigate();
-    // const [error, setError] = useState("");
-
-//     const onSubmit = async (formData) => {
-//         try {
-            
-//         }
-// }
-
+    return(
+        <h1>Home page</h1>
+    )
 }
 
 export default Homepage;

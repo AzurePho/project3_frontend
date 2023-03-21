@@ -1,0 +1,15 @@
+.nav-links {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    padding: 16px 32px;
+}
+
+
+ul > li:first-of-type {
+    margin-right: auto;
+}
+
+.nav-item {
+    margin-right: 12px;
+}

@@ -1,0 +1,76 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+.page {
+    min-width: 100vw;
+    height: 100vh;
+    background-image:linear-gradient(to right,rgb(29 29 120 / 50%), rgb(176 176 191 / 50%)),url(./public/anita-austvika-EsXKsUJn0Lg-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+ 
+}
+
+.containerD{
+    width:200px;
+    height: 200px;
+}
+.Drinkcontain {
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+
+.page ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row; 
+    padding: 5px;
+
+
+}
+/* .imagAlbum {
+    border: 5px solid rgb(44, 44, 76) ;
+    border-radius: 20px;
+}
+
+.containerAlbum {
+    position: 10px 100px 20px 50px;
+    display: inline;
+}
+.Musicpage {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row;
+} */
+/* .Musiccontain{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /* align-items: center;
+    flex-direction: row; 
+} */
+.drink-image {
+    width: 200px;
+    height: 200px;;
+}
+.musicclass {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column; 
+    padding: 5px;
+}
+.drinkTitle {
+    width: 200px;
+}
