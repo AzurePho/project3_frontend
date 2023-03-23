@@ -58,3 +58,45 @@ body{
     border: none;
 
 }
+
+.homepage {
+    min-width: 100vw;
+    height: 100vh;
+    padding: 10px;
+    background-image:linear-gradient(to right,rgb(29 29 120 / 50%), rgb(176 176 191 / 50%)),url(../pages/home.avif);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.homepage h1 {
+    color: rgb(137, 225, 233);
+    text-align: center;
+    margin-top: 20px;
+}
+.homepage h3 {
+    color: rgb(137, 225, 233);
+    text-align: center;
+    margin-top: 20px;
+}
+
+.containerHome {
+    position: absolute;
+    height: 400px;
+    width: 500px;
+    background-color: rgba(212, 221, 228, 0.215);
+    left: 33vw;
+    bottom: 40vh;
+    align-items: center;
+
+}
+
+.drinkButtonHome {
+    color: rgb(137, 225, 233);
+    text-align: center;
+    margin-top: 50px;
+    margin-left:200px;
+    width: 100px;
+
+    
+}

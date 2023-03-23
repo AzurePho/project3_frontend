@@ -6,32 +6,70 @@
 .page {
     min-width: 100vw;
     height: 100vh;
-    background-image:linear-gradient(to right,rgb(29 29 120 / 50%), rgb(176 176 191 / 50%)),url(./public/anita-austvika-EsXKsUJn0Lg-unsplash.jpg);
+    padding: 10px;
+    background-image:linear-gradient(to right,rgb(29 29 120 / 50%), rgb(176 176 191 / 50%)),url(../pages/beer.avif);
     background-size: cover;
     background-position: center;
  
 }
 
+.containerDinside{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    padding:10px;
+    background-color: rgb(181, 181, 159);
+    border-radius: 10px;
+    box-shadow: 10px;
+}
+
 .containerD{
-    width:200px;
-    height: 200px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.Drinkcol{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
 }
 .Drinkcontain {
-    border: 1px solid black;
+    border: 1px solid rgb(236, 232, 232);
+    background-color:rgba(165, 155, 136, 0.58) ;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
+    box-shadow: -15px 15px 20px rgba(0,0,0,0.4);
 }
 
 
 
-.page ul {
+.drink-image {
     list-style: none;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     align-items: center;
-    flex-direction: row; 
+    flex-direction: column; 
+    padding: 5px;
+
+
+}
+
+.drink-text {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column; 
     padding: 5px;
 
 
@@ -63,14 +101,107 @@
     width: 200px;
     height: 200px;;
 }
-.musicclass {
+/* .musicclass {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     align-items: center;
     flex-direction: column; 
     padding: 5px;
-}
+} */
 .drinkTitle {
     width: 200px;
 }
+
+.drinkpage {
+    min-width: 100vw;
+    height: 100vh;
+    padding: 10px;
+    background-image:linear-gradient(to right,rgb(29 29 120 / 50%), rgb(176 176 191 / 50%)),url(../pages/drink.avif);
+    background-size: cover;
+    background-position: center;
+ 
+}
+
+.drinkButtonDrink{
+    background-color: rgb(241, 205, 159);
+    width: 100px;
+    border-color: antiquewhite;
+    color: black;
+}
+
+.imageAlbum {
+    width: 300px;
+    height: 300px;;
+
+}
+
+.containerAlbum {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding:5px;
+ 
+}
+
+.containerAlbuminside{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding:5px;
+    background-color: rgba(156, 175, 195, 0.59);
+    color: aqua;
+    border-radius: 10px;
+    margin-right: 100px;
+    margin-top: 20px;
+}
+
+.imageAlbum {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding:5px;
+
+}
+
+.containerAlbum p , Button {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding:2px;
+   
+}
+
+.sectionCard {
+    margin-left: 5px;
+    padding: 5px;
+}
+
+.delete-button { 
+   width: 100px;
+    padding:5px;
+    background-color: rgb(141, 184, 184);
+    border-color:  rgb(141, 184, 184);
+    margin-right: 10px;
+}
+
+.drinkCard {
+   width: 100px;
+    padding:5px;
+    background-color: rgb(141, 184, 184);
+    border-color:  rgb(141, 184, 184);
+}
+
+
+
+
+
+        

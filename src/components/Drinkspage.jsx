@@ -5,7 +5,7 @@ import { Link , useParams} from "react-router-dom";
 import "../Index.css";
 import "./Drink.css"
 // import "bootstrap/dist/css/bootstrap.min"
-import { Container , Row , Col, Card , Badge , Button } from "react-bootstrap"
+import { Container , Row , Col, Card , Badge , Button, Placeholder } from "react-bootstrap";
 
 const Drinkspage = ()=> {
     const [data , setData]= useState([]);
@@ -25,37 +25,113 @@ const Drinkspage = ()=> {
 
 
 
-return (
+
+
+
+
+
+
+
+  return (
+
     <div className="page" >
 
-        <h1>drinks page</h1>
-        <div className="containerD" >
-        <ul className="Drinkcontain">
-            {data.map((element)=> {
-               return(
-                    
-                    <li key={element._id} className="musicclass">
-                        
-                        <img src={element.image} alt="" className="drink-image" />
-                        <div>
-                            <p className="drinkTitle">Name: {element.name}</p>
-                         
-                            <Link to={`/drinks/${element._id}`}>
-                                <button className="musicCard">Click!</button>
-                            </Link>
-                        </div>
+     <h1>drinks page</h1>
+       <div className="containerD" >
+       
+       <Row xs={1} md={3} className="g-4">
+      {data.map((element)=> {
+        return (
+        <Col className="Drinkcol">
+       
+       
+          <Card className="Drinkcontain">
+            <Card.Img className="drink-image" variant="top" src={element.image} />
+            <Card.Body className="drink-text">
+              <Card.Title>{element.name}</Card.Title>
+              <Card.Text>
+              <Link to={`/drinks/${element._id}`}>
 
-
-                    </li>
-               )
+                <Button className="drinkButtonDrink">Click!</Button>
                 
-            })}
-        </ul>
+              </Link>
+              </Card.Text>
+            </Card.Body>
+          </Card>
+          
+          </Col>)
+      })}
+      <Placeholder xs={6} />
+       </Row>
+           </div>
+      </div>
+      
+    
+  );
 
-        </div>
-    </div>
 
-)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// return (
+//     <div className="page" >
+
+//         <h1>drinks page</h1>
+//         <div className="containerD" >
+//         <ul className="Drinkcontain">
+//             {data.map((element)=> {
+//                return(
+                    
+//                     <li key={element._id} className="musicclass">
+                        
+//                         <img src={element.image} alt="" className="drink-image" />
+//                         <div>
+//                             <p className="drinkTitle">Name: {element.name}</p>
+                         
+//                             <Link to={`/drinks/${element._id}`}>
+//                                 <button className="musicCard">Click!</button>
+//                             </Link>
+//                         </div>
+
+
+//                     </li>
+//                )
+                
+//             })}
+//         </ul>
+
+//         </div>
+//     </div>
+
+// )
 
         };
 

@@ -3,6 +3,7 @@ import axios from "axios";
 import {API_URL} from "../consts";
 import { Link , useParams} from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import {Button} from "react-bootstrap";
 
 import "../Index.css";
 // import "./Drink.css"
@@ -55,6 +56,7 @@ const deleteDrink = async (id) => {
     }catch(err){
         console.log(err);
         setError(err.response.data.message);
+        console.log(error);
     }
 };
 
@@ -63,18 +65,16 @@ const deleteDrink = async (id) => {
         
        
 
-<div className="page" >
-{error && (<h4 className="alert-failure">
-                                {error}
-                            </h4>)}
+<div className="drinkpage" >
+{error && (<h4 className="alert-failure">{error}</h4>)}
     <div className="containerAlbum" >
 
-    <h1>drink item</h1>
+   
 
     
-            <ul>
+           
 
-            <li key={id}>
+            <div className="containerAlbuminside">
             <img src={drink.image} alt="" className="imageAlbum" />
            
                         <div>
@@ -82,18 +82,20 @@ const deleteDrink = async (id) => {
                             <p className="drinkFlav">Flavor: {drink.flavour}</p>
                             <p className="drinkCal">Calories: {drink.calories}</p>
                             <p className="drinkAl">Alcohol content: {drink.alcohol}</p>
-                            
-                            <button className="delet-button" onClick={()=>deleteDrink(drink._id)}>Delete!</button>
+                            <section className="sectionCard">
+                            <Button className="delete-button" onClick={()=>deleteDrink(drink._id)}>Delete!</Button>
                          
 
                             <Link to={`/drinks/${id}/edit`}>
-                                <button className="drinkCard">Edit!</button>
+                                <Button className="drinkCard">Edit!</Button>
                             </Link>
+                            </section>
+                            
                          </div>
-           </li>
-           </ul>
-           </div>
+          
+            </div>
         </div>
+</div>
 
     )
 
