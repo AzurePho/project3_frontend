@@ -59,7 +59,10 @@ const Register = () => {
         ];
 
             return (
-                <div className="view">
+                <div className="viewRegister">
+                    <video autoPlay loop  className="backVideo" src="../pages/pexels.mp4">
+    
+                    </video>
                     <h1>Register</h1>
                     {confirmationMessage ?(
                         <h4 className="alert-success">

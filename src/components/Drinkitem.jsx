@@ -86,9 +86,9 @@ const deleteDrink = async (id) => {
                             <Button className="delete-button" onClick={()=>deleteDrink(drink._id)}>Delete!</Button>
                          
 
-                            <Link to={`/drinks/${id}/edit`}>
+                            {/* <Link to={`/drinks/${id}/edit`}> */}
                                 <Button className="drinkCard">Edit!</Button>
-                            </Link>
+                            {/* </Link> */}
                             </section>
                             
                          </div>

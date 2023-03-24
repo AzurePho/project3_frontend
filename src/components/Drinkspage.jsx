@@ -7,6 +7,21 @@ import "./Drink.css"
 // import "bootstrap/dist/css/bootstrap.min"
 import { Container , Row , Col, Card , Badge , Button, Placeholder } from "react-bootstrap";
 
+
+
+// const NewDrinkCard = () => {
+//   return (
+//     <Card className="newDrinkCard">
+//       <Card.Body>
+//         <Card.Title>Add a New Drink</Card.Title>
+//         <Link to="">
+//           <Button variant="primary">Create</Button>
+//           </Link>
+//           </Card.Body>
+//           </Card>
+//   );
+// }
+
 const Drinkspage = ()=> {
     const [data , setData]= useState([]);
     // const [isLoading, setISLoading]= useState(true);
@@ -18,7 +33,7 @@ const Drinkspage = ()=> {
             // setISLoading(false);
             console.log(data);
         };
-        setTimeout(fetchData, 500);
+        setTimeout(fetchData, 500); 
         // fetchData();
         }, []);
     
