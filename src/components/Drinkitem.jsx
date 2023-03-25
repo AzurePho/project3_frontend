@@ -23,7 +23,7 @@ const Drinkitem = () => {
     {
         name: "",
         flavour: "",
-        alcohol: "",
+        alcohol: false,
         image: "",
       };
 
@@ -117,10 +117,11 @@ const onChange = (e)=> {
 const onSubmit = async(e) => {
     e.preventDefault();
     console.log(formData);
+    
     try {
-        const res = await axios.patch(`${API_URL}/drinks/${id}`, formData);
-        // console.log(formData);
-        console.log(res);
+        const {data} = await axios.patch(`${API_URL}/drinks/${id}`, formData);
+        console.log(formData);
+        console.log(data);
         // setConfirmationMessage(res.data.message);
         // setFormData(initialFormData);
 
@@ -137,15 +138,18 @@ const inputFields = [
     {
         placeholder: "name",
         name: "name",
+        type:"text"
     },
     {
         placeholder: "flavour",
         name: "flavour",
+        type:"text"
     },
   
     {
         placeholder: "alcohol",
         name: "alcohol",
+        type:"select"
     },
     {
         placeholder: "image",
@@ -207,13 +211,15 @@ const inputFields = [
 
                      <form className="edit-form" onSubmit={onSubmit}>
                            {inputFields.map((input)=>{
-                            return(
+                            return( input.type === "select"?
+                            <><select onChange={onChange}><option>true</option><option>false</option></select></>:
                             <input placeholder={input.placeholder}
                             name={input.name}
                             value={formData[input.name]}
-                            onChange={onChange} />
-                            )
-                        })}
+                            type={input.type}
+                            onChange={onChange}/>
+                            
+                            )})}
 
                         <Button type="submit"> Edit!</Button>
                         

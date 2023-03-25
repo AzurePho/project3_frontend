@@ -58,11 +58,11 @@ return(
             onChange={onChange}/>
             <input 
             placeholder="Password"
-            name="password"
+            name="password" type =""
             value={formData.password}
             onChange={onChange} />
 
-            <Button type="submit" >Login!</Button>
+            <Button type="submit"  >Login!</Button>
         </form>
     </div>
 )
