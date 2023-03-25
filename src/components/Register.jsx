@@ -12,8 +12,8 @@ const Register = () => {
   const initialFormData = {
     userName: "",
     email: "",
-    passWord: "",
-    confirmPsaaword: "",
+    password: "",
+    confirmPassword: "",
   };
   const [formData, setFormData] = useState(initialFormData);
 
@@ -69,12 +69,13 @@ const Register = () => {
         className="backVideo"
         src="../pages/pexels.mp4"
       ></video>
-      <h1>Register</h1>
+      
       {confirmationMessage ? (
         <h4 className="alert-success">{confirmationMessage}</h4>
       ) : error ? (
         <h4 className="alert-failure">{error}</h4>
       ) : null}
+      <h2>Register</h2>
 
       <form className="auth-form" onSubmit={onSubmit}>
         {inputFields.map((input) => {
@@ -89,10 +90,16 @@ const Register = () => {
           );
         })}
 
-        <button type="submit"> Register!</button>
+        <Button type="submit"> Register!</Button>
       </form>
     </div>
   );
 };
 
 export default Register;
+
+// When a user enters their information into the form and clicks the "Register" button,
+// the code sends a request to a server using Axios to register the user's information.
+// The page will indicate whether the registration has been successful or whether there has been an error.
+
+// It is a form requesting username, email, password, and confirm password.

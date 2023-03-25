@@ -16,6 +16,7 @@ const Drinkitem = () => {
     const [nonEdit , setNonEdit]= useState(true);
     const [error , setError]= useState("");
     const [confirmationMessage , setConfirmationMessage]=useState("");
+    const [foundId , setFoundId]= useState(localStorage.userId);
     
     
 
@@ -118,6 +119,7 @@ const onSubmit = async(e) => {
     e.preventDefault();
     console.log(formData);
     
+
     try {
         const {data} = await axios.patch(`${API_URL}/drinks/${id}`, formData);
         console.log(formData);
@@ -188,12 +190,12 @@ const inputFields = [
                             <p className="drinkCal">Calories: {drink.calories}</p>
                             <p className="drinkAl">Alcohol content: {drink.alcohol}</p>
                             <section className="sectionCard">
-                            <Button className="delete-button" onClick={()=>deleteDrink(drink._id)}>Delete!</Button>
+                           {foundId && <Button className="delete-button" onClick={()=>deleteDrink(drink._id)}>Delete!</Button>}
                          
 
-                            {/* <Link to={`/drinks/${id}/edit`}> */}
-                                <Button className="drinkCard"  onClick={()=>editDrink(drink._id)}>Edit!</Button>
-                            {/* </Link> */}
+                           
+                                {foundId && <Button className="drinkCard"  onClick={()=>editDrink(drink._id)}>Edit!</Button>}
+                           
                             </section>
                          </div> 
             </div>
@@ -247,7 +249,15 @@ const inputFields = [
 
 export default Drinkitem;
 
+// This page pulls out information from the API and renders in on our components page using bootstrap.
 
+//The component fetches data from an API using Axios and uses the useState and useEffect hooks to manage
+//state and perform side effects. We used Bootstrap library for styling, and the code also includes a Placeholder
+//component for displaying while the data is loading.
+
+//The goal is to add a new Card to allow users to create a new drink.
+//The commented out NewDrinkCard component provides a starting point for this implementation.
+//The Card component will have a button that the user can click to navigate to a form for creating a new drink.
 
 
 

@@ -232,6 +232,36 @@
 }
 
 
+.Create-form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin-left: -100px;
+    margin-top: 100px;
+    background-color: rgba(140, 155, 157, 0.83);
+    padding: 5px;
+    margin-left: 30px;
+}
+
+.Create-form input , select {
+    margin-bottom: 10px;
+   padding: 8px 5px ; 
+   border-radius: 10px;
+   background-color: rgba(208, 237, 243, 0.766);
+}
+
+.createpage {
+    min-width: 100vw;
+    height: 100vh;
+    padding: 10px;
+    background-image:linear-gradient(to right,rgb(29 29 120 / 50%), rgb(176 176 191 / 50%)),url(../pages/drinkdes.webp);
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+ 
+}
+
+
 
 
 

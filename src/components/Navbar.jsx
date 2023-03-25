@@ -68,3 +68,9 @@ const  Navbar =() => {
 
 export default Navbar;
 
+// We have used useState and useEffect hooks to keep track of whether the user is logged in or not.
+// If the user has obtained the token then the loggedin variable will be set to true.
+// When a user is logged in, they will see a "Logout" button in the top-right handside of the screen.
+// When clicked, this will remove their token which inturn sends them back to the homepage.
+
+// When not logged in the user will see the options of "Login" and "Register" buttons.

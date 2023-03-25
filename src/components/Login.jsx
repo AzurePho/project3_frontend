@@ -10,8 +10,8 @@ const Login = () => {
   const navigate = useNavigate();
   const [error, setError] = useState("");
   const initialFormData = {
-    email: "admin@gmail.com",
-    password: "adminpassword",
+    email: "",
+    password: "",
   };
 
   const [formData, setFormData] = useState(initialFormData);
@@ -66,3 +66,11 @@ const Login = () => {
 };
 
 export default Login;
+
+
+// We have used 'useState' to keep track of some information that is input by the user.
+// When someone uses the Login function, they see a form that asks them to enter their email and password.
+// If they enter the wrong email or password, the page will show an error message.
+// If entered correctly,  the page sends that information to the web server to check if the information is correct.
+// If the information is correct, the server sends back a "token" that says the user will be logged in.
+// When logged in the user will have the benefit of seeing different information to a non logged in user.

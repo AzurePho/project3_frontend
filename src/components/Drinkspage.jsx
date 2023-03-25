@@ -79,6 +79,28 @@ const onChange = async(drinkData,id) => {
        <div className="containerD" >
        
        <Row xs={1} md={3} className="g-4">
+       <Col className="Drinkcol" >
+       <Card className="newDrinkCard">
+            <Card.Img className="drink-image" variant="top" src="./pages/beer-default.jpeg" />
+            <Card.Body className="drink-text">
+              <Card.Title>Create new drink</Card.Title>
+              <Card.Text>
+              
+            {!foundId && (<Link to={`/login`}>
+
+                 <Button className="drinkButtonDrink">Login!</Button>
+                
+                </Link>)}
+
+                {foundId && (<Link to={`/createDrink`}>
+
+              <Button className="drinkButtonDrink">Create! </Button>
+              </Link>)}
+                
+              </Card.Text>
+            </Card.Body>
+          </Card>
+          </Col>
       {data.map((element)=> {
         return (
         <Col className="Drinkcol" key={element._id}>
@@ -90,13 +112,13 @@ const onChange = async(drinkData,id) => {
               <Card.Title>{element.name}</Card.Title>
               <Card.Text>
               
-               {isLoading && (<Link to={`/drinks/${element._id}`}>
+              <Link to={`/drinks/${element._id}`}>
 
                  <Button className="drinkButtonDrink">Click!</Button>
                 
-                </Link>)} 
+                </Link>
 
-                { foundId && (<Button className="drinkButtonDrink" onClick={()=>{onChange(element,element._id)}}>Add </Button>)}
+                {/* { foundId && (<Button className="drinkButtonDrink" onClick={()=>{onChange(element,element._id)}}>Add </Button>)} */}
                 
               </Card.Text>
             </Card.Body>
@@ -120,7 +142,10 @@ export default Drinkspage;
 
 
 
-
+// The page fetches the drinks data using the useEffect hook, then maps the data to
+// create a Card component for each drink with an image, title, and a link to a detailed view of the drink.
+// The Placeholder component is used to create an empty space for the last card should there not be a third
+// card on the row.
 
 
 
