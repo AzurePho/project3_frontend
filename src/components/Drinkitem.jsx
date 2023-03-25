@@ -124,6 +124,7 @@ const onSubmit = async(e) => {
         console.log(data);
         // setConfirmationMessage(res.data.message);
         // setFormData(initialFormData);
+        navigate("/drinks");
 
     }catch(err){
         // setError(err.response.data.message);
