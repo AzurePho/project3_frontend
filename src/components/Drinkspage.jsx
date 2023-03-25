@@ -1,44 +1,68 @@
 import {useEffect , useState} from "react";
 import axios from "axios";
 import {API_URL} from "../consts";
-import { Link , useParams} from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../Index.css";
 import "./Drink.css"
 // import "bootstrap/dist/css/bootstrap.min"
-import { Container , Row , Col, Card , Badge , Button, Placeholder } from "react-bootstrap";
+import { Container , Row , Col, Card , Badge , Button} from "react-bootstrap";
 
 
 
-// const NewDrinkCard = () => {
-//   return (
-//     <Card className="newDrinkCard">
-//       <Card.Body>
-//         <Card.Title>Add a New Drink</Card.Title>
-//         <Link to="">
-//           <Button variant="primary">Create</Button>
-//           </Link>
-//           </Card.Body>
-//           </Card>
-//   );
-// }
+
 
 const Drinkspage = ()=> {
     const [data , setData]= useState([]);
-    // const [isLoading, setISLoading]= useState(true);
+    const [foundId , setFoundId]= useState(localStorage.userId);
+    const [isLoading, setISLoading]= useState(!localStorage.userId);
+
+
 
     useEffect (()=> {
         const fetchData = async()=> {
             const {data} = await axios.get(`${API_URL}/drinks`);
+
             setData(data);
             // setISLoading(false);
-            console.log(data);
+            // console.log(data);
         };
         setTimeout(fetchData, 500); 
         // fetchData();
         }, []);
-    
 
 
+
+
+axios.defaults.headers.common["Authorization"]=`Bearer ${localStorage.token}`;
+ 
+
+const onChange = async(drinkData,id) => {
+
+   const initialFormData = 
+    {
+        name: drinkData.name,
+        flavour: drinkData.flavour,
+        alcohol: drinkData.alcohol,
+        image: drinkData.image,
+      };
+ 
+  try{
+    await axios.post(`${API_URL}/drinks`,initialFormData);
+    const {data} = await axios.get(`${API_URL}/drinks`);
+
+    setData(data);
+    setFoundId("");
+    setISLoading(true);
+   
+    // navigate(`/drinks/${id}`);
+}catch(err){
+    console.log(err);
+    // setError(err.response.data.message);
+    // console.log(error);
+}
+
+
+};
 
 
 
@@ -57,7 +81,7 @@ const Drinkspage = ()=> {
        <Row xs={1} md={3} className="g-4">
       {data.map((element)=> {
         return (
-        <Col className="Drinkcol">
+        <Col className="Drinkcol" key={element._id}>
        
        
           <Card className="Drinkcontain">
@@ -65,24 +89,31 @@ const Drinkspage = ()=> {
             <Card.Body className="drink-text">
               <Card.Title>{element.name}</Card.Title>
               <Card.Text>
-              <Link to={`/drinks/${element._id}`}>
+              
+               {isLoading && (<Link to={`/drinks/${element._id}`}>
 
-                <Button className="drinkButtonDrink">Click!</Button>
+                 <Button className="drinkButtonDrink">Click!</Button>
                 
-              </Link>
+                </Link>)} 
+
+                { foundId && (<Button className="drinkButtonDrink" onClick={()=>{onChange(element,element._id)}}>Add </Button>)}
+                
               </Card.Text>
             </Card.Body>
           </Card>
           
           </Col>)
       })}
-      <Placeholder xs={6} />
+     
        </Row>
            </div>
       </div>
-      
-    
-  );
+   
+  )
+
+};
+
+export default Drinkspage;
 
 
 
@@ -148,9 +179,7 @@ const Drinkspage = ()=> {
 
 // )
 
-        };
-
-        export default Drinkspage;
+       
 
 
 

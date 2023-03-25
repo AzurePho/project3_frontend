@@ -4,6 +4,7 @@ import { useState } from "react";
 import { API_URL } from "../consts";
 import "../Index.css";
 import "../style/Auth.css";
+import { Button } from "react-bootstrap";
 
 const Register = () => {
   const [confirmationMessage, setConfirmationMessage] = useState("");

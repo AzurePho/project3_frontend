@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { API_URL } from "../consts";
 import "../Index.css";
 import "../style/Auth.css";
+import { Button } from "react-bootstrap";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -18,16 +19,18 @@ const Login = () => {
   const onChange = (e) => {
     setError("");
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    console.log(formData);
+    // console.log(formData);
   };
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    // console.log(formData);
     try {
       const { data } = await axios.post(`${API_URL}/login`, formData);
       console.log(data.token);
+      console.log(data);
       localStorage.setItem("token", data.token);
+      localStorage.setItem("userId", data.payload.id);
       axios.defaults.headers.common["Authorization"] = `Bearer ${data.token}`;
       navigate("/drinks");
     } catch (err) {
@@ -37,8 +40,8 @@ const Login = () => {
   };
 
   return (
-    <div className="view">
-      <h1>Login</h1>
+    <div className="viewLogin">
+      <h2>Login</h2>
       {error && <h4 className="alert-failure">{error}</h4>}
 
       <form className="auth-form" onSubmit={onSubmit}>
@@ -56,7 +59,7 @@ const Login = () => {
           onChange={onChange}
         />
 
-        <button type="submit">Login!</button>
+        <Button type="submit">Login!</Button>
       </form>
     </div>
   );
