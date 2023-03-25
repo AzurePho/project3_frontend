@@ -5,7 +5,8 @@
 }
 .page {
     min-width: 100vw;
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
     padding: 10px;
     background-image:linear-gradient(to right,rgb(29 29 120 / 50%), rgb(176 176 191 / 50%)),url(../pages/beer.avif);
     background-size: cover;
@@ -38,7 +39,13 @@
     align-content: center;
     justify-content: space-evenly;
     align-items: center;
+    transition: transform 500ms ease;
 }
+
+.Drinkcol :hover {
+    transform: scale(1.05);
+}
+
 .Drinkcontain {
     border: 1px solid rgb(236, 232, 232);
     background-color:rgba(165, 155, 136, 0.58) ;
@@ -47,6 +54,7 @@
     justify-content: space-between;
     align-items: center;
     box-shadow: -15px 15px 20px rgba(0,0,0,0.4);
+    
 }
 
 
@@ -120,6 +128,7 @@
     background-image:linear-gradient(to right,rgb(29 29 120 / 50%), rgb(176 176 191 / 50%)),url(../pages/drink.avif);
     background-size: cover;
     background-position: center;
+    position: fixed;
  
 }
 
@@ -158,7 +167,10 @@
     border-radius: 10px;
     margin-right: 100px;
     margin-top: 20px;
+    
 }
+
+
 
 .imageAlbum {
     display: flex;
@@ -198,6 +210,25 @@
     padding:5px;
     background-color: rgb(141, 184, 184);
     border-color:  rgb(141, 184, 184);
+}
+
+
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    margin-left: -100px;
+
+    margin-top: 100px;
+    background-color: rgba(166, 208, 214, 0.83);
+    padding: 5px;
+}
+
+.edit-form input {
+     margin-bottom: 10px;
+    padding: 3px 3px ; 
+    border-radius: 10px;
+    background-color: rgb(255 ,255 ,255);
 }
 
 

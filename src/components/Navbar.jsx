@@ -21,6 +21,7 @@ const  Navbar =() => {
     const logoutDrink = (id) => {
         console.log(id)
         localStorage.removeItem("token");
+        localStorage.removeItem("userId");
 
         try{
             axios.defaults.headers.common["Authorization"]="";
@@ -36,6 +37,9 @@ const  Navbar =() => {
     return (
         <nav>
             <ul className="nav-links">
+                <li >
+                    <img className="nav-image" src="../pages/download22.png" alt="" />
+                </li>
                 <li className="nav-item" >
                     <Link to="" >Home</Link>
                 </li>
@@ -44,10 +48,10 @@ const  Navbar =() => {
 
                 </li>
                 {loggedIn ?<li>
-                    <a className="nav-item-logout" onClick={()=>logoutDrink(4)}>Logout</a>
+                    <a className="nav-item" onClick={()=>logoutDrink(4)}>Logout</a>
                         </li>: 
                 <>
-                <li className="nav-item-login">
+                <li className="nav-item">
                 <Link to="/login">Login</Link>
             </li>
                 <li className="nav-item">

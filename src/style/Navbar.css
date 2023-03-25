@@ -3,13 +3,24 @@
     justify-content: flex-end;
     list-style: none;
     padding: 16px 32px;
+    margin-bottom: -3px;
+   
 }
 
 
 ul > li:first-of-type {
     margin-right: auto;
+
+   
+}
+.nav-image {
+    width: 30px;
+    height: 30px;
+   
+   
 }
 
 .nav-item {
-    margin-right: 12px;
+    margin-left: 20px;
+   
 }

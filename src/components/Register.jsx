@@ -4,6 +4,7 @@ import { useState } from "react"
 import {API_URL} from "../consts";
 import "../Index.css";
 import "../style/Auth.css";
+import {Button} from "react-bootstrap";
 
 
 const Register = () => {
@@ -63,7 +64,7 @@ const Register = () => {
                     <video autoPlay loop  className="backVideo" src="../pages/pexels.mp4">
     
                     </video>
-                    <h1>Register</h1>
+                    <h2>Register</h2>
                     {confirmationMessage ?(
                         <h4 className="alert-success">
                             {confirmationMessage}
@@ -84,7 +85,7 @@ const Register = () => {
 
                         })}
 
-                        <button type="submit"> Register!</button>
+                        <Button type="submit"> Register!</Button>
                         
                      </form>        
     
